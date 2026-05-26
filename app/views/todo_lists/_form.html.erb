@@ -1,26 +1,27 @@
 <%= form_with model:@todo_list do |f|%>
 
-<% if @todo_list.errors.any?%>
-  <div style = 'color:red' >
-    <ul>
-      <% @todo_list.errors.full_message.each.do |error| %>
-      <li> <%= error %> </li>
-      <% end %>
-    </ul>
-  </div>
+  <% if @todo_list.errors.any?%>
+    <div style = 'color:red' >
+      <ul>
+        <% @todo_list.errors.full_messages.each do |error| %>
+          <li> <%= error %> </li>
+        <% end %>
+      </ul>
+    </div>
+  <%end%>
 
-  <div style='margin_bottom:8px'>
+  <div style='margin-bottom:8px'>
     <%= f.label :name%>
     <%= f.text_field :name, style: 'width:300px'%>
-  </>
+  </div>
 
-  <div style='margin_top:8px'>
+  <div style='margin-top:8px'>
     <%= f.label :description%>
     <%= f.text_area :description, style: 'width:300px'%>
   </div>
 
-  <div style='margin_top:8px'>
+  <div style='margin-top:8px'>
     <%= f.submit %>
   </div>
+  
 <%end%>
-
