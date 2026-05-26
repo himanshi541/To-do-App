@@ -16,7 +16,7 @@ class TodoListsController < ApplicationController
     if @todo_list.save
       redirect_to todo_lists_path, notice:"Todo created successfully"
     else
-      render :new, status: :unprocessble_content
+      render :new, status: :unprocessable_content
     end
   end
 
