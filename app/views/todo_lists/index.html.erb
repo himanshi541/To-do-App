@@ -6,7 +6,7 @@
 
 <h1>Todo Lists</h1>
 
-<table border = 1>
+<table border='2'>
   <thead>
     <tr>
       <th> NAME </th>
@@ -20,6 +20,7 @@
         <td> <%= todo_list.name %> </td>
         <td> <%= todo_list.description%> </td>
         <td> <%= link_to 'Show' ,todo_list_path(todo_list) %></td>
+        <td> <%= link_to 'Edit' ,edit_todo_list_path(todo_list) %></td>
       <% end %>
     </tr>
   </tbody>
