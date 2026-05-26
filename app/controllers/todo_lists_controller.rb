@@ -1,5 +1,5 @@
 class TodoListsController < ApplicationController
-  before_action :set_todo_list , only: [:show, :edit, :update]
+  before_action :set_todo_list , only: [:show, :edit, :update, :destroy]
   def index
     @todo_lists = TodoList.all
   end
@@ -30,6 +30,12 @@ class TodoListsController < ApplicationController
       render :edit, status: :unprocessable_content
     end
   end
+
+  def destroy
+    @todo_list.destroy
+    redirect_to todo_list_path, notice:"Todo Deleted"
+  end
+
   private
 
   def set_todo_list
