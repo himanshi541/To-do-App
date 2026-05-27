@@ -1,3 +1,4 @@
+# Tasks are done by scaffold
 class TasksController < ApplicationController
   before_action :set_task, only: %i[ show edit update destroy ]
 
@@ -7,6 +8,7 @@ class TasksController < ApplicationController
   end
 
   # GET /tasks/1 or /tasks/1.json
+
   def show
   end
 
